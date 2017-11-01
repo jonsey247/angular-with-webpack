@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         polyfills: './src/polyfill.ts',
         vendor: './src/vendor.ts',
-        app: './src/main.ts'
+        app: isProd ? './src/main.aot.ts':'./src/main.ts'
     },
 
     resolve: {
