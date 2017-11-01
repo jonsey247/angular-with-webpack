@@ -6,9 +6,9 @@ var isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
     entry: {
-        polyfills: './src/polyfills.ts',
+        polyfills: './src/polyfill.ts',
         vendor: './src/vendor.ts',
-        app: isProd ? './src/main.aot.ts' : './src/main.ts'
+        app: './src/main.ts'
     },
 
     resolve: {
@@ -23,8 +23,7 @@ module.exports = {
                     {
                         loader: 'awesome-typescript-loader',
                         options: {
-                            configFileName: isProd ?
-                                helpers.root('tsconfig-aot.json') :
+                            configFileName: 
                                 helpers.root('tsconfig.json')
                         }
                     },
